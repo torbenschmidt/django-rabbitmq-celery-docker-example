@@ -1,5 +1,6 @@
-celery==4.3.0
-Django==2.2.7
-django-celery-results==1.1.2
-kombu==4.6.6
-psycopg2==2.8.4
+celery==5.4.0
+Django==5.1.2
+django-celery-results==2.5.1
+kombu==5.4.2
+psycopg==3.2.3
+psycopg2

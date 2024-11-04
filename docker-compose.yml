@@ -43,7 +43,7 @@ services:
     restart: on-failure
     command: >
       sh -c "wait-for backend:8080 &&
-             celery worker -B -l info -A mypubsub.celery -s /tmp/celerybeat-schedule"
+             celery -A mypubsub.celery worker -B -l info -s /tmp/celerybeat-schedule"
     depends_on:
       - backend
       - rabbit
@@ -52,7 +52,7 @@ services:
       - shared_network
 
   db:
-    image: postgres:10-alpine
+    image: postgres:17-alpine
     container_name: db
     hostname: db
     environment:
